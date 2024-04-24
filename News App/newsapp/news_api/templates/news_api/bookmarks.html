@@ -1,0 +1,20 @@
+<!-- bookmarks.html -->
+<h1>Bookmarks</h1>
+<div class="container">
+    <div class="col-md-8">
+        {% for article in bookmarked_articles %}
+        <div class="card rounded shadow-lg m-2">
+            <img src="{{ article.urlToImage }}" class="card-img-top" alt="..." width="300px">
+            <div class="card-body">
+                <p class="card-title">{{ article.author }}</p>
+                <h5 class="card-title">{{ article.title }}</h5>
+                <p class="card-text">{{ article.source.name }}</p>
+                <p class="card-text">{{ article.description }}</p>
+                <hr>
+                <small>Date: {{ article.publishedAt }}</small>
+                <a href="{{ article.url }}" class="btn btn-success">See full news</a>
+            </div>
+        </div>
+        {% endfor %}
+    </div>
+</div>
